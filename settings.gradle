@@ -1,0 +1,2 @@
+include 'applications/api'
+rootProject.name='mjl-trading'

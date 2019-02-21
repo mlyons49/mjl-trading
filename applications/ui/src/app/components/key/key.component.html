@@ -1,0 +1,30 @@
+<div>
+
+  <div *ngIf="!account">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="keyId" value="{{keyApi}}">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="secretKey" value="{{secretKey}}">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="apiBaseUrl" value="{{baseUri}}">
+      </mat-form-field>
+
+      <button mat-button (click)="setAccountInfo()">Set Account Info</button>
+  </div>
+
+  <div *ngIf="account">
+    <div>
+        Account Status: {{account.status}}
+    </div>
+    <div>
+      Cash Balance: {{account.cash}}
+    </div>
+    <div>
+      <button mat-button (click)="logOut()">LogOut</button>
+    </div>
+  </div>
+</div>

@@ -2,18 +2,18 @@
 
   <div *ngIf="!account">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="keyId" value="{{keyApi}}">
+        <input matInput placeholder="keyId" [formControl]="keyApi">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="secretKey" value="{{secretKey}}">
+        <input matInput placeholder="secretKey" [formControl]="secretKey">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="apiBaseUrl" value="{{baseUri}}">
+        <input matInput placeholder="apiBaseUrl" [formControl]="baseUri">
       </mat-form-field>
 
-      <button mat-button (click)="setAccountInfo()">Set Account Info</button>
+      <button mat-button class="mat-button" (click)="setAccountInfo()">Set Account Info</button>
   </div>
 
   <div *ngIf="account">
@@ -24,7 +24,7 @@
       Cash Balance: {{account.cash}}
     </div>
     <div>
-      <button mat-button (click)="logOut()">LogOut</button>
+      <button mat-button class="mat-button" (click)="logOut()">LogOut</button>
     </div>
   </div>
 </div>

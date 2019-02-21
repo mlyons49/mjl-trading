@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import { AlpacaClientService } from 'src/app/services/alpaca-client.service';
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-key',
   templateUrl: './key.component.html',
-  styleUrls: ['./key.component.css']
+  styleUrls: ['./key.component.scss']
 })
 export class KeyComponent implements OnInit {
 
-  keyApi = '';
-  secretKey = '';
-  baseUri = '';
+  keyApi = new FormControl('', [Validators.required]);
+  secretKey = new FormControl('', [Validators.required]);
+  baseUri = new FormControl('', [Validators.required]);
 
   account: Account;
   
@@ -21,19 +22,17 @@ export class KeyComponent implements OnInit {
   }
 
   setAccountInfo(): void {
-    console.log('in setAccountInfo');
-    this.alpacaClientService.setConfig(this.keyApi, this.secretKey, this.baseUri);
+    console.log('in setAccountInfo' + this.baseUri.value);
+    this.alpacaClientService.setConfig(this.keyApi.value, this.secretKey.value, this.baseUri.value);
 
     this.alpacaClientService.getAccount().subscribe(
       (data) => {
         this.account = data;
-        console.log('this.account:', this.account);
       }
     );
   }
 
   logOut(): void {
-    console.log('in logout');
     this.account = null;
   }
 }

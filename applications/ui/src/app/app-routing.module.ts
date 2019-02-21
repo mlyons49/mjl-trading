@@ -3,16 +3,24 @@ import {Routes, RouterModule} from '@angular/router';
 import { KeyComponent } from './components/key/key.component';
 
 export const routes: Routes = [
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   redirectTo: 'home'
+  // },
+  // {
+  //   path: 'home',
+  //   component: KeyComponent
+  // }
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
+    component: KeyComponent
   },
   {
     path: 'home',
-    component: KeyComponent
+    pathMatch: 'full',
+    redirectTo: ''
   }
-
 ]
 @NgModule({
   declarations: [],

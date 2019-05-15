@@ -1,0 +1,10 @@
+CREATE TABLE `stocks`.`bar` (
+  `s` VARCHAR(8) NOT NULL,
+  `t` TIMESTAMP NOT NULL,
+  `i` VARCHAR(6) NOT NULL,
+  `o` DECIMAL(16,4) NOT NULL,
+  `c` DECIMAL(16,4) NOT NULL,
+  `h` DECIMAL(16,4) NOT NULL,
+  `l` DECIMAL(16,4) NOT NULL,
+  `v` BIGINT NOT NULL,
+  PRIMARY KEY (`s`, `t`, `i`));

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: mjl-trading-api
+
+logging:
+  level:
+    net.mjlinc.trading: DEBUG
+#    org.springframework.web: DEBUG
+#    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+#    org.hibernate.SQL: INFO
